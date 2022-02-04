@@ -760,7 +760,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
-				<value>8</value> <!-- strange in VSP 3.25 -->
+				<value>7.25</value> <!-- strange in VSP 3.25 -->
 				<value>-1</value> <!-- sign -->
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
