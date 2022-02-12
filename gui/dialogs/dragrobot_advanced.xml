@@ -16,7 +16,7 @@
       <stretch>true</stretch>
     </empty>
     <text>
-      <label>Drag Roboter Advanced Configuration</label>
+      <label>Drag Robot Advanced Configuration</label>
       <font>
         <name>times_bold</name>
       </font>
@@ -397,7 +397,7 @@
       <legend>Reset</legend>
       <binding>
         <command>nasal</command>
-        <script>dg101g.resetRobotAttributes()</script>
+        <script>dragrobot.resetRobotAttributes()</script>
       </binding>
     </button>
     <empty>
