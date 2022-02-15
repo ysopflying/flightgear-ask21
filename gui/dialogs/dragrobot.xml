@@ -14,7 +14,7 @@
 			<stretch>true</stretch>
 		</empty>
 		<text>
-			<label>Drag Roboter Configuration</label>
+			<label>Drag Robot Configuration</label>
 			<font>
 				<name>times_bold</name>
 			</font>
@@ -156,10 +156,10 @@ release the cable if necessary to remain terrain terrain clearance! </label>
 				<command>nasal</command>
 				<script>dragrobot.resetRobotAttributes()</script>
 			</binding>
-			<binding>
+			<!-- binding>
 				<command>nasal</command>
 				<script>dragrobot.resetTowing()</script>
-			</binding>
+			</binding --> <!-- resetTowing() does not exist anywhere -->
 		</button>
 		<empty>
 			<pref-height>6</pref-height>
