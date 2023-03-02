@@ -1,5 +1,5 @@
 <aerodynamics>
-	<!-- FDM rework by YSOP MAy 2021 on basis D-ECHO's initial version -->
+	<!-- FDM rework by YSOP on basis D-ECHO's initial version -->
 	<hysteresis_limits unit="DEG">
 		<min>9</min>
 		<max>19</max>
@@ -267,6 +267,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
+				<value>0.75<value>
 				<value>-0.285</value> <!-- VSP -->
 			</product>
 		</function>
@@ -343,6 +344,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/rudder-pos-rad</property>
 				<value>-1</value>
+				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -494,6 +496,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/aileron-pos-rad-nodiff</property>
+				<value>0.75<value>
 				<value>1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
@@ -589,6 +592,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
 				<property>fcs/elevator-pos-rad</property>
+				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">velocities/mach</independentVar> <!-- erstmal gelassen 3.25 viel zu klein VSP -->
@@ -647,7 +651,7 @@
 				<property>metrics/cbarw-ft</property>
 				<property>aero/ci2vel</property>
 				<property>aero/alphadot-rad_sec</property>
-				<value>-34</value> <!-- VSP -->
+				<value>-34</value>
 			</product>
 		</function>
 		<function name="aero/force/pitch speedbrake">
@@ -761,6 +765,7 @@
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
 				<value>7.25</value> <!-- strange in VSP 3.25 -->
+				<value>0.75<value>
 				<value>-1</value> <!-- sign -->
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
@@ -785,6 +790,7 @@
 				<property>metrics/bw-ft</property>
 				<property>fcs/aileron-pos-rad-nodiff</property>
 				<value>1</value> <!-- sign -->
+				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
