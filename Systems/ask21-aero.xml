@@ -107,7 +107,7 @@
 			</product>
 		</function>
 -->
-<!-- Cx groundeffect fehlt -->
+<!-- Cx groundeffect missing -->
 
 	</axis>
 
@@ -198,7 +198,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
-				<value>0.75<value>
+				<value>0.75</value>
 				<value>-0.285</value> <!-- VSP -->
 			</product>
 		</function>
@@ -208,10 +208,7 @@
 	<!-- #########  Y  ########### -->
 	<!-- ########################### -->
 	<axis name="Y">
-		<function name="aero/force/Cy_test">
-			<description>Cy testvalue for direction pos rechts</description>
-			<value>0</value>
-		</function>
+
 		<function name="aero/force/Cy_beta">
 			<description>Side force due to beta</description>
 			<product>
@@ -274,8 +271,8 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/rudder-pos-rad</property>
+				<value>0.75</value>
 				<value>-1</value>
-				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -427,7 +424,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/aileron-pos-rad-nodiff</property>
-				<value>0.75<value>
+				<value>0.75</value>
 				<value>1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
@@ -460,7 +457,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
-				<value>0.5</value> <!-- tuning -->
+				<value>0.75</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -504,18 +501,7 @@
 				</table>
 			</product>
 		</function>
-<!--		
-		<function name="aero/moment/Pitch_alpha">
-			<description>Pitch moment due to alpha</description>
-			<product>
-				<property>aero/qbar-psf</property>
-				<property>metrics/Sw-sqft</property>
-				<property>metrics/cbarw-ft</property>
-				<property>aero/alpha-rad</property>
-				<value> -0.895</value> 
-			</product>
-		</function>
--->		
+	
 		<function name="aero/moment/Pitch_elevator">
 			<description>Pitch moment due to elevator</description>
 			<product>
@@ -523,7 +509,6 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
 				<property>fcs/elevator-pos-rad</property>
-				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">velocities/mach</independentVar> <!-- erstmal gelassen 3.25 viel zu klein VSP -->
@@ -696,8 +681,8 @@
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
 				<value>7.25</value> <!-- strange in VSP 3.25 -->
-				<value>0.75<value>
 				<value>-1</value> <!-- sign -->
+				<value>0.75</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -720,8 +705,8 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/aileron-pos-rad-nodiff</property>
+				<value>0.75</value>
 				<value>1</value> <!-- sign -->
-				<value>0.75<value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
