@@ -582,7 +582,7 @@
 				<property>metrics/cbarw-ft</property>
 				<property>aero/ci2vel</property>
 				<property>aero/alphadot-rad_sec</property>
-				<value>-34</value>
+				<value>-10</value>
 			</product>
 		</function>
 		<function name="aero/force/pitch speedbrake">
