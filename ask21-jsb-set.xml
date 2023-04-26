@@ -187,4 +187,12 @@ See AUTHORS.txt for credits
 			<file>Aircraft/ASK21/Nasal/dragrobot.nas</file>
 		</dragrobot>
 	</nasal>
+
+	<!-- TEMPORARY FIX for a missing property in 'next' -->
+	<instrumentation>
+		<turn-indicator>
+			<spin type="float">1.0</spin>
+		</turn-indicator>
+	</instrumentation>
+
 </PropertyList>
