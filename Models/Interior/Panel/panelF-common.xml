@@ -105,10 +105,10 @@
 		<name>vario</name>
 		<path>Instruments/vario-5stv5/winter-vario-5stv5.xml</path>
 		<offsets>
-			<x-m>-3.323</x-m>
+			<x-m>-3.33</x-m>
 			<y-m>0.11</y-m>
 			<z-m>0.74</z-m>
-			<pitch-deg>-2</pitch-deg>
+			<pitch-deg>-6</pitch-deg>
 		</offsets>
 	</model>
 	<model>
