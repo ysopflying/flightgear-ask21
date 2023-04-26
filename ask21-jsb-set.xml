@@ -107,14 +107,16 @@ See AUTHORS.txt for credits
 				</binding>
 			</key>
 			
-			<key n="111">
+			<!-- key n=111 is double-assigned below! -->
+			<!--key n="111">
 				<name>o</name>
 				<desc>Lock aerotow-hook</desc>
 				<binding>
 					<command>nasal</command>
 					<script>towing.closeHitch()</script>
 				</binding>
-			</key>
+			</key-->
+
 			<key n="23">
 				<name>Ctrl-w</name>
 				<desc>Place Winch and hook in</desc>
@@ -169,10 +171,11 @@ See AUTHORS.txt for credits
 						<value type="bool">false</value>
 					</binding>
 				</mod-up>
-
 			</key>
+
 		</keyboard>
 	</input>
+	
 	<nasal>
 		<electrical>
 			<file>Aircraft/ASK21/Nasal/electrical.nas</file>
