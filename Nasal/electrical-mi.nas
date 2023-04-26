@@ -322,7 +322,7 @@ var electrical_bus_1 = func() {
 		#	starting ~9.9 / volts (approx)
 		#	running ~7.8 / volts (approx)
 		if ( getprop("/controls/electric/turn-slip-switch")==1) {
-			#setprop("/systems/electrical/outputs/turn", bus_volts);
+			setprop("/systems/electrical/outputs/turn-indicator", bus_volts); # temporary fix
 			setprop("/systems/electrical/outputs/turn-coordinator", bus_volts);
 			if( turnbank_spin.getValue() > 0.99 ){
 				load += 7.8 / bus_volts;
@@ -330,7 +330,7 @@ var electrical_bus_1 = func() {
 				load += 9.9 / bus_volts;
 			}
 		} else {
-			#setprop("/systems/electrical/outputs/turn", 0.0);
+			#setprop("/systems/electrical/outputs/turn-indicator", 0.0); # temporary fix
 			setprop("/systems/electrical/outputs/turn-coordinator", 0.0);
 		}
 		
