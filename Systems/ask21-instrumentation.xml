@@ -2,7 +2,8 @@
 
 <!--
 **********************************************************************
-This is a modified version of Aircraft/Generic/generic-instrumentation.xml from FGData, adapted to the ASK21
+This is a modified version of Aircraft/Generic/generic-instrumentation.xml 
+from FGData, adapted to the ASK21
 
 Generic instrumentation configuration. This file selects the
 instrumentation modules that should be available.
@@ -20,6 +21,8 @@ The values in this file are the default values. If any configuration
 tags are omitted in an aircraft specific version of this configuration
 file, these values will be used (they are hardcoded).
 
+See Wiki for further documentation:
+https://wiki.flightgear.org/Instrumentation
 **********************************************************************
 -->
 

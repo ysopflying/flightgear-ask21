@@ -7,6 +7,10 @@ See AUTHORS.txt for credits
 	<sim>
 		<author>Heiko Schulz, AJ MacLeod, with help by Detlef Faber, "refurbished" by Thomas Polzer, Viktor Radnai, Benedikt Wolf, Gilberto Agostinho and Herbert Wagner</author>
 		<aircraft-version>5.0</aircraft-version>
+		<aircraft-class type="string">ga</aircraft-class>
+		<tags>
+			<tag n="0">glider</tag><!-- make Logbook Addon life easier :) -->
+		</tags>
 		<!-- Save some properties when the simulator is shut down -->
 		<aircraft-data>
 			<path>/sim/model/window</path>

@@ -4,6 +4,7 @@
 	<path>ask21.ac</path>
 	<nasal>
 		<load>
+			var self = cmdarg();
             var livery_update = aircraft.livery_update.new("Aircraft/ASK21/Models/Liveries", 10);
 
             var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);

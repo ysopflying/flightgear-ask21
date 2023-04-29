@@ -1,7 +1,14 @@
 <?xml version="1.0"?>
+<!-- 
+    Instrument layers from nearest to viewer (top) to farthest (bottom):
+        Face2
+        needle
+        Face
+        Face2.001
+-->
 <PropertyList>
     <path>winter-vario-5stv5.ac</path>
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>Face</object-name>
         <object-name>Needle</object-name>
@@ -11,7 +18,7 @@
             <blue>0.07</blue>
             <factor-prop>sim/model/instruments-light</factor-prop>
         </emission>
-    </animation>
+    </animation-->
     <animation>
         <type>rotate</type>
         <object-name>Needle</object-name>

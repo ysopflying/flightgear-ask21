@@ -19,7 +19,7 @@
 			<button>0</button>
 			<binding>
 				<command>property-toggle</command>
-                                <property>/controls/electric/turn-slip-switch</property>
+				<property>/controls/electric/turn-slip-switch</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
