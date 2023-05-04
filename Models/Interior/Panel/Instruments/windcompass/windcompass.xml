@@ -49,7 +49,7 @@
 		</emission>
 	</animation>
 
-	<!-- wind needle  -->
+	<!-- wind needle (animations are cumulative!) -->
 	<animation>
 		<type>rotate</type>
 		<object-name>n2</object-name>
@@ -67,8 +67,7 @@
 			<z>0.0</z>
 		</axis>
 	</animation>
-
-	<!--animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>n2</object-name>
 		<property>orientation/heading-deg</property>
@@ -80,7 +79,7 @@
 			<y>0.0</y>
 			<z>0.0</z>
 		</axis>
-	</animation-->
+	</animation>
 
 
 	<!-- indicated air speed -->
