@@ -188,11 +188,4 @@ See AUTHORS.txt for credits
 		</dragrobot>
 	</nasal>
 
-	<!-- TEMPORARY FIX for a missing property in 'next' -->
-	<instrumentation>
-		<turn-indicator>
-			<spin type="float">1.0</spin>
-		</turn-indicator>
-	</instrumentation>
-
 </PropertyList>
