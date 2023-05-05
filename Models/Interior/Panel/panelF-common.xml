@@ -115,7 +115,7 @@
 	</model>
 	<model>
 		<name>vario-1</name>
-		<path>Instruments/vario-knots/winter-vario-5stv5-knots.xml</path>
+		<path>Instruments/vario-5stv5-knots/winter-vario-5stv5-knots.xml</path>
 		<offsets>
 			<x-m>-3.323</x-m>
 			<y-m>0.11</y-m>
