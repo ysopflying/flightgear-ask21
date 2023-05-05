@@ -105,7 +105,7 @@
 	<!--Variometer-->
 	<model>
 		<name>vario</name>
-		<path>Instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+		<path>Instruments/vario-5stv5-kmph/winter-vario-5stv5.xml</path>
 		<offsets>
 			<x-m>-3.33</x-m>
 			<y-m>0.11</y-m>
