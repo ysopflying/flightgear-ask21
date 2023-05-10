@@ -122,7 +122,7 @@
 	<!--Variometer-->
 	<model>
 		<name>vario</name>
-		<path>Instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+		<path>Instruments/vario-5stv5-kmph/winter-vario-5stv5.xml</path>
 		<offsets>
 			<x-m>-2.19714</x-m>
 			<y-m>0.11</y-m>
@@ -132,7 +132,7 @@
 	</model>
 	<model>
 		<name>vario-1</name>
-		<path>Instruments/vario-knots/winter-vario-5stv5-knots.xml</path>
+		<path>Instruments/vario-5stv5-knots/winter-vario-5stv5-knots.xml</path>
 		<offsets>
 			<x-m>-2.19714</x-m>
 			<y-m>0.11</y-m>

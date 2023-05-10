@@ -44,6 +44,8 @@ See AUTHORS.txt for credits
 			<visibility archive="y">false</visibility>
 		</panel>
 		<tutorials include="Tutorials/ask21-tutorials.xml"/>
+
+		<!-- MP towing, see: https://wiki.flightgear.org/Howto:Setup_winch_and_aerotowing_for_JSBSim-aircraft -->
 		<hitches>
 			<aerotow>
 				<force_name_jsbsim type="string">aerotow_hitch</force_name_jsbsim>
@@ -51,12 +53,14 @@ See AUTHORS.txt for credits
 				<mp-auto-connect-period type="float">0.0</mp-auto-connect-period>
 			</aerotow>
 		</hitches>
+
 		<glider>
 			<winch>
 				<conf>
 					<rope_initial_length_m>1000.0</rope_initial_length_m>
 					<pull_max_lbs>1102.0</pull_max_lbs> <!-- 500daN -->
 				</conf>
+				<winch-factor type="float">0.5</winch-factor><!-- initial winch speed -->
 			</winch>
 			<towing>
 				<conf>
@@ -187,12 +191,5 @@ See AUTHORS.txt for credits
 			<file>Aircraft/ASK21/Nasal/dragrobot.nas</file>
 		</dragrobot>
 	</nasal>
-
-	<!-- TEMPORARY FIX for a missing property in 'next' -->
-	<instrumentation>
-		<turn-indicator>
-			<spin type="float">1.0</spin>
-		</turn-indicator>
-	</instrumentation>
 
 </PropertyList>

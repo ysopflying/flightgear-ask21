@@ -8,7 +8,7 @@
 			<x-m>-3.328</x-m>
 			<y-m>-0.11</y-m>
 			<z-m>0.74</z-m>
-			<pitch-deg>-4</pitch-deg>
+			<pitch-deg>-5.9</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -18,7 +18,7 @@
 			<x-m>-3.328</x-m>
 			<y-m>-0.11</y-m>
 			<z-m>0.74</z-m>
-			<pitch-deg>-4</pitch-deg>
+			<pitch-deg>-5.9</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -28,7 +28,7 @@
 			<x-m>-3.328</x-m>
 			<y-m>-0.11</y-m>
 			<z-m>0.74</z-m>
-			<pitch-deg>-4</pitch-deg>
+			<pitch-deg>-5.9</pitch-deg>
 		</offsets>
 	</model>
 	<animation>
@@ -66,18 +66,20 @@
 		<name>alt</name>
 		<path>Instruments/alti-4110/winter-4110.xml</path>
 		<offsets>
-			<x-m>-3.315</x-m>
+			<x-m>-3.325</x-m>
 			<y-m>-0.16</y-m>
 			<z-m> 0.65</z-m>
+			<pitch-deg>-3.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<name>alt-ft</name>
 		<path>Instruments/alti-4320/winter-4320.xml</path>
 		<offsets>
-			<x-m>-3.315</x-m>
+			<x-m>-3.325</x-m>
 			<y-m>-0.16</y-m>
 			<z-m> 0.65</z-m>
+			<pitch-deg>-3.5</pitch-deg>
 		</offsets>
 	</model>
 	<animation>
@@ -103,7 +105,7 @@
 	<!--Variometer-->
 	<model>
 		<name>vario</name>
-		<path>Instruments/vario-5stv5/winter-vario-5stv5.xml</path>
+		<path>Instruments/vario-5stv5-kmph/winter-vario-5stv5.xml</path>
 		<offsets>
 			<x-m>-3.33</x-m>
 			<y-m>0.11</y-m>
@@ -113,7 +115,7 @@
 	</model>
 	<model>
 		<name>vario-1</name>
-		<path>Instruments/vario-knots/winter-vario-5stv5-knots.xml</path>
+		<path>Instruments/vario-5stv5-knots/winter-vario-5stv5-knots.xml</path>
 		<offsets>
 			<x-m>-3.323</x-m>
 			<y-m>0.11</y-m>
@@ -147,10 +149,11 @@
 		<name>vario2</name>
 		<path>Aircraft/ASK21/Models/Interior/Panel/Instruments/ilec-sc7/ilec-sc7.xml</path>
 		<offsets>
-			<x-m>-3.321</x-m>
+			<!--x-m>-3.321</x-m-->
+			<x-m>-3.325</x-m>
 			<y-m>0.0</y-m>
 			<z-m>0.67</z-m>
-			<pitch-deg>-2</pitch-deg>
+			<pitch-deg>-4</pitch-deg>
 		</offsets>
 	</model>
 	
@@ -159,20 +162,21 @@
 		<name>gmeter</name>
 		<path>Aircraft/ASK21/Models/Interior/Panel/Instruments/GMeter/GMeter.xml</path>
 		<offsets>
-			<x-m>-3.317</x-m>
+			<!--x-m>-3.317</x-m-->
+			<x-m>-3.318</x-m>
 			<y-m>0.1</y-m>
 			<z-m>0.65</z-m>
-			<pitch-deg>-5</pitch-deg>
+			<pitch-deg>-3.2</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<name>gmeter_screws</name>
 		<path>Aircraft/ASK21/Models/Interior/Panel/Instruments/GMeter/57mm_screws.xml</path>
 		<offsets>
-			<x-m>-3.317</x-m>
+			<x-m>-3.322</x-m>
 			<y-m>0.1</y-m>
 			<z-m>0.65</z-m>
-			<pitch-deg>-5</pitch-deg>
+			<pitch-deg>-3.2</pitch-deg>
 		</offsets>
 	</model>
 	<!-- Compass -->
@@ -180,10 +184,10 @@
 		<name>compass</name>
 		<path>Aircraft/ASK21/Models/Interior/Panel/Instruments/57mm_compass/57mm_compass.xml</path>
 		<offsets>
-			<x-m>-3.319</x-m>
+			<x-m>-3.317</x-m>
 			<y-m>0.175</y-m>
 			<z-m>0.65</z-m>
-			<pitch-deg>-5</pitch-deg>
+			<pitch-deg>-3.35</pitch-deg>
 		</offsets>
 	</model>
 	<!-- Master switch -->

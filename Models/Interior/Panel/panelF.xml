@@ -11,10 +11,10 @@
 		<name>wind</name>
 		<path>Instruments/windcompass/windcompass.xml</path>
 		<offsets>
-			<x-m>-3.328</x-m>
+			<x-m>-3.334</x-m>
 			<y-m>-0.0</y-m>
 			<z-m>0.74</z-m>
-			<pitch-deg>-4</pitch-deg>
+			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	<animation>
