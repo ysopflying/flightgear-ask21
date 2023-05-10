@@ -76,6 +76,13 @@ See AUTHORS.txt for credits
 			</dragger>
 		</glider>
 
+		<addon-hints>
+			<Logbook>
+				<landing-gear-idx type="int">0</landing-gear-idx>
+				<landing-gear-idx type="int">1</landing-gear-idx>
+			</Logbook>
+		</addon-hints>
+
 	</sim>
 	
 	
