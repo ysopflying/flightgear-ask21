@@ -1,5 +1,7 @@
 <aerodynamics>
 	<!-- FDM rework by YSOP on basis D-ECHO's initial version -->
+        <!-- improved betadot  -->
+        <!-- experimental local aoa  -->
 	<hysteresis_limits unit="DEG">
 		<min>9</min>
 		<max>19</max>
@@ -15,6 +17,98 @@
 					</tableData>
 				</table>
 		</function>			
+
+		<function name="aero/function/stall-model">
+			<description>stall-model active=1 </description>
+				<table>
+					<independentVar>aero/alpha-deg</independentVar>
+					<tableData>
+						-14	1
+						-13	0
+						13	0
+						14	1
+					</tableData>
+				</table>
+		</function>			
+		<function name="aero/function/vnl">
+			<description>v normal left</description>
+			<sum>
+			<product>
+				<property>ic/v-fps</property>
+				<value>0.9976</value>
+			</product>
+			<product>
+				<property>ic/w-fps</property>
+				<value>-0.0698</value>
+			</product>
+			</sum>
+		</function>			
+
+		<function name="aero/function/vnr">
+			<description>v normal right</description>
+			<sum>
+			<product>
+				<property>ic/v-fps</property>
+				<value>0.9976</value>
+			</product>
+			<product>
+				<property>ic/w-fps</property>
+				<value>0.0698</value>
+			</product>
+			</sum>
+		</function>			
+
+		<function name="aero/function/local_alpha_sideslip_left">
+			<description>change local alpha due to sideslip left</description>
+			<atan2>
+				<property>aero/function/vnl</property>
+				<property>ic/u-fps</property>
+			</atan2>
+		</function>			
+		<function name="aero/function/local_alpha_sideslip_right">
+			<description>change local alpha due to sideslip right</description>
+			<atan2>
+				<property>aero/function/vnr</property>
+				<property>ic/u-fps</property>
+			</atan2>
+		</function>			
+
+		<function name="aero/function/local_alphachange_roll1l">
+			<description>change local alpha due to roll</description>
+			<quotient>
+				<product>
+					<property>velocities/p-aero-rad_sec</property>
+					<value>-1</value>
+					<value>10</value> <!-- y1[ft]-->
+				</product>
+			<property>velocities/u-aero-fps</property>
+		</quotient>
+
+		</function>			
+		<function name="aero/function/local_alphachange_roll1r">
+			<description>change local alpha due to roll</description>
+			<product>
+				<property>aero/function/local_alphachange_roll1l</property>
+				<value>-1</value> <!-- y1[ft]-->
+			</product>
+		</function>			
+
+
+		<function name="aero/function/local_u1l">
+			<description>local u due to r</description>
+			<sum>
+			<product>
+				<property>velocities/r-aero-rad_sec</property>
+				<value>1</value> <!-- y1[ft]-->
+			</product>
+			<property>ic/u-fps</property>
+			</sum>
+		</function>			
+
+		<function name="aero/function/local_beta_tail">
+			<description>local beta for vertical stabilizer</description>
+				<value>1</value>
+		</function>
 
 	<!-- ########################### -->
 	<!-- #########  X  ########### -->
@@ -414,6 +508,33 @@
 			</product>
 		</function>
 
+		<function name="aero/moment/roll_betadot">
+			<description>roll moment due to betadot</description> <!-- VSP -->
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<value>-0.023</value>
+				<property>aero/betadot-rad_sec</property>
+<!--				<table>
+					<independentVar lookup="row">aero/alpha-deg</independentVar>
+					<independentVar lookup="column">aero/beta-deg</independentVar>
+					<tableData>
+	-15	-10	-5	0	5	10	15
+-8	-0.0411347	-0.0422486	-0.0426909	-0.0429783	-0.0426909	-0.0422486	-0.0411347
+-4	-0.0877593	-0.0896423	-0.0907546	-0.0913176	-0.0907546	-0.0896423	-0.0877593
+0	-0.1343207	-0.1369869	-0.1387228	-0.1393916	-0.1387228	-0.1369869	-0.1343207
+4	-0.1799262	-0.1836817	-0.1859272	-0.1867319	-0.1859272	-0.1836817	-0.1799262
+8	-0.2249717	-0.2294513	-0.2320634	-0.2334728	-0.2320634	-0.2294513	-0.2249717
+12	-0.2685402	-0.2740721	-0.2776083	-0.2786855	-0.2776083	-0.2740721	-0.2685402
+					</tableData>
+				</table>
+-->
+			</product>
+		</function>
+
+
 
 
 
@@ -647,6 +768,34 @@
 				</table>	
 			</product>
 		</function>
+
+		<function name="aero/moment/yaw_betadot">
+			<description>yaw moment due to betadot</description> <!-- VSP -->
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<value>-0.012</value>
+				<property>aero/betadot-rad_sec</property>
+<!--				<table>
+					<independentVar lookup="row">aero/alpha-deg</independentVar>
+					<independentVar lookup="column">aero/beta-deg</independentVar>
+					<tableData>
+	-15	-10	-5	0	5	10	15
+-8	-0.0411347	-0.0422486	-0.0426909	-0.0429783	-0.0426909	-0.0422486	-0.0411347
+-4	-0.0877593	-0.0896423	-0.0907546	-0.0913176	-0.0907546	-0.0896423	-0.0877593
+0	-0.1343207	-0.1369869	-0.1387228	-0.1393916	-0.1387228	-0.1369869	-0.1343207
+4	-0.1799262	-0.1836817	-0.1859272	-0.1867319	-0.1859272	-0.1836817	-0.1799262
+8	-0.2249717	-0.2294513	-0.2320634	-0.2334728	-0.2320634	-0.2294513	-0.2249717
+12	-0.2685402	-0.2740721	-0.2776083	-0.2786855	-0.2776083	-0.2740721	-0.2685402
+					</tableData>
+				</table>
+-->
+			</product>
+		</function>
+
+
 		<function name="aero/moment/yaw_rollrate">
 			<description>Yaw moment due to roll rate</description> <!-- VSP -->
 			<product>
