@@ -67,10 +67,15 @@
 	</metrics>
 	
 	<mass_balance>
-		<ixx unit="SLUG*FT2"> 1000 </ixx>
+		<ixx unit="SLUG*FT2"> 6520 </ixx> <!-- from spin test -->
+		<iyy unit="SLUG*FT2"> 1446 </iyy>
+		<izz unit="SLUG*FT2"> 7468 </izz>
+		
+<!--		<ixx unit="SLUG*FT2"> 1000 </ixx>
 		<iyy unit="SLUG*FT2">  300 </iyy>
 		<izz unit="SLUG*FT2"> 2355 </izz>
-		<emptywt unit="LBS">   794 </emptywt>
+		<emptywt unit="LBS">   794 </emptywt> -->
+
 		<location name="CG" unit="M">
 			<!-- 315mm aft of reference point (leading edge), empty mass -->
 			<x> -0.9     </x>
