@@ -1,11 +1,8 @@
 <aerodynamics>
 	<!-- FDM rework by YSOP on basis D-ECHO's initial version -->
         <!-- improved betadot  -->
-        <!-- experimental local aoa  -->
-	<hysteresis_limits unit="DEG">
-		<min>9</min>
-		<max>19</max>
-	</hysteresis_limits>
+
+
 		<function name="fcs/aileron-pos-rad-nodiff">
 			<description>aileron_pos rad independent of differential</description>
 				<table>
@@ -17,98 +14,6 @@
 					</tableData>
 				</table>
 		</function>			
-
-		<function name="aero/function/stall-model">
-			<description>stall-model active=1 </description>
-				<table>
-					<independentVar>aero/alpha-deg</independentVar>
-					<tableData>
-						-14	1
-						-13	0
-						13	0
-						14	1
-					</tableData>
-				</table>
-		</function>			
-		<function name="aero/function/vnl">
-			<description>v normal left</description>
-			<sum>
-			<product>
-				<property>ic/v-fps</property>
-				<value>0.9976</value>
-			</product>
-			<product>
-				<property>ic/w-fps</property>
-				<value>-0.0698</value>
-			</product>
-			</sum>
-		</function>			
-
-		<function name="aero/function/vnr">
-			<description>v normal right</description>
-			<sum>
-			<product>
-				<property>ic/v-fps</property>
-				<value>0.9976</value>
-			</product>
-			<product>
-				<property>ic/w-fps</property>
-				<value>0.0698</value>
-			</product>
-			</sum>
-		</function>			
-
-		<function name="aero/function/local_alpha_sideslip_left">
-			<description>change local alpha due to sideslip left</description>
-			<atan2>
-				<property>aero/function/vnl</property>
-				<property>ic/u-fps</property>
-			</atan2>
-		</function>			
-		<function name="aero/function/local_alpha_sideslip_right">
-			<description>change local alpha due to sideslip right</description>
-			<atan2>
-				<property>aero/function/vnr</property>
-				<property>ic/u-fps</property>
-			</atan2>
-		</function>			
-
-		<function name="aero/function/local_alphachange_roll1l">
-			<description>change local alpha due to roll</description>
-			<quotient>
-				<product>
-					<property>velocities/p-aero-rad_sec</property>
-					<value>-1</value>
-					<value>10</value> <!-- y1[ft]-->
-				</product>
-			<property>velocities/u-aero-fps</property>
-		</quotient>
-
-		</function>			
-		<function name="aero/function/local_alphachange_roll1r">
-			<description>change local alpha due to roll</description>
-			<product>
-				<property>aero/function/local_alphachange_roll1l</property>
-				<value>-1</value> <!-- y1[ft]-->
-			</product>
-		</function>			
-
-
-		<function name="aero/function/local_u1l">
-			<description>local u due to r</description>
-			<sum>
-			<product>
-				<property>velocities/r-aero-rad_sec</property>
-				<value>1</value> <!-- y1[ft]-->
-			</product>
-			<property>ic/u-fps</property>
-			</sum>
-		</function>			
-
-		<function name="aero/function/local_beta_tail">
-			<description>local beta for vertical stabilizer</description>
-				<value>1</value>
-		</function>
 
 	<!-- ########################### -->
 	<!-- #########  X  ########### -->
@@ -190,17 +95,7 @@
 				<value>-0.0037</value> <!--  VSP -->
 			</product>
 		</function>
-<!--		
-		<function name="aero/force/cx_stall">
-			<description>Drag due to stall</description>
-			<product>
-				<property>aero/qbar-psf</property>
-				<property>metrics/Sw-sqft</property>
-				<abs><property>aero/stall-hyst-norm</property></abs>
-				<value>-0.2</value> 
-			</product>
-		</function>
--->
+
 <!-- Cx groundeffect missing -->
 
 	</axis>
@@ -263,7 +158,7 @@
 90.000	1.011	-0.489	-0.715	-0.820	-0.918	-1.010	-0.918	-0.820	-0.715	-0.489	1.011
 					</tableData>
 				</table>
-				<!--(ported from C172p:) ground effect--> <!--  VSP -->
+				<!--(ported from C172p:) ground effect--> 
 				<table>
 					<independentVar>aero/h_b-cg-ft</independentVar>
 					<tableData>
@@ -293,7 +188,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
 				<value>0.75</value>
-				<value>-0.285</value> <!-- VSP -->
+				<value>-0.285</value>
 			</product>
 		</function>
 	</axis>
@@ -385,7 +280,7 @@
 			</product>
 		</function>
 		<function name="aero/force/sideforce_yawrate">
-			<description>Side force due to yaw rate</description> <!-- VSP -->
+			<description>Side force due to yaw rate</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -408,7 +303,7 @@
 			</product>
 		</function>
 		<function name="aero/force/sideforce_rollrate">
-			<description>Side force due to roll rate</description> <!-- VSP -->
+			<description>Side force due to roll rate</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -436,7 +331,7 @@
 	<!-- ########################### -->
 	<axis name="ROLL">
 		<function name="aero/moment/Roll_beta">
-			<description>Roll moment due to beta</description> <!-- VSP -->
+			<description>Roll moment due to beta</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -459,7 +354,7 @@
 			</product>
 		</function>
 		<function name="aero/moment/roll_damp2">
-			<description>Roll damping derivative</description> <!-- VSP -->
+			<description>Roll damping derivative</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -483,7 +378,7 @@
 			</product>
 		</function>
 		<function name="aero/moment/roll_yawrate">
-			<description>roll moment due to yaw rate</description> <!-- VSP -->
+			<description>roll moment due to yaw rate</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -509,7 +404,7 @@
 		</function>
 
 		<function name="aero/moment/roll_betadot">
-			<description>roll moment due to betadot</description> <!-- VSP -->
+			<description>roll moment due to betadot</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -539,7 +434,7 @@
 
 
 		<function name="aero/moment/Roll_aileron">
-			<description>Roll moment due to aileron</description> <!-- VSP, includes differential ailerons -->
+			<description>Roll moment due to aileron</description> <!-- includes differential ailerons -->
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -605,7 +500,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
-<!--				<value>-0.0329</value>  VSP, new introduced due to shift AeroRP -->
+<!--				<value>-0.0329</value>  new introduced due to shift AeroRP -->
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -632,7 +527,7 @@
 				<property>fcs/elevator-pos-rad</property>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
-					<independentVar lookup="column">velocities/mach</independentVar> <!-- erstmal gelassen 3.25 viel zu klein VSP -->
+					<independentVar lookup="column">velocities/mach</independentVar> 
 					<tableData>
 						0.05	0.1	0.15	0.2	0.25	
 						-4	-1.322	-1.326	-1.332	-1.34	-1.353
@@ -658,7 +553,7 @@
 			</product>
 		</function>
 		<function name="aero/moment/pitch_damp">
-			<description>Pitch damping derivative</description> <!-- VSP -->
+			<description>Pitch damping derivative</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -725,7 +620,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<value>-1</value>
-				<value>2.18</value> <!-- from CFD to correct VSP -->
+				<value>2.18</value> <!-- from CFD as correction factor -->
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>
 					<independentVar lookup="column">aero/beta-deg</independentVar>
@@ -744,7 +639,7 @@
 		</function>
 			
 		<function name="aero/moment/Yaw_damp">
-			<description>Yaw damping derivative</description> <!-- VSP -->
+			<description>Yaw damping derivative</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -770,7 +665,7 @@
 		</function>
 
 		<function name="aero/moment/yaw_betadot">
-			<description>yaw moment due to betadot</description> <!-- VSP -->
+			<description>yaw moment due to betadot</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -797,7 +692,7 @@
 
 
 		<function name="aero/moment/yaw_rollrate">
-			<description>Yaw moment due to roll rate</description> <!-- VSP -->
+			<description>Yaw moment due to roll rate</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
@@ -821,13 +716,13 @@
 			</product>
 		</function>
 		<function name="aero/moment/Yaw_rudder">
-			<description>Yaw moment due to rudder</description> <!-- VSP -->
+			<description>Yaw moment due to rudder</description> 
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
-				<value>7.25</value> <!-- strange in VSP 3.25 -->
+				<value>7.25</value> <!-- strange 3.25 -->
 				<value>-1</value> <!-- sign -->
 				<value>0.75</value>
 				<table>
